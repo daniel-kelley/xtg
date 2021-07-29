@@ -20,6 +20,8 @@ jobs:
       run: pwd
     - name: ls
       run: ls
+    - name: find
+      run: find . -type f
     - name: make
       run: make
     - name: make check
