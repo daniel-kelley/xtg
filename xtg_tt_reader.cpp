@@ -31,7 +31,7 @@ xtg_tt_reader::xtg_tt_reader(std::string file)
     std::ifstream in(file);
     assert(in);
     std::string line;
-    int len = 0;
+
     while (std::getline(in, line)) {
         std::size_t len = line.length();
         if (len == 0 || line[0] == '#') {

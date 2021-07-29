@@ -41,7 +41,7 @@ static int xtg(const char *file)
 {
     int rc = 1;
     xtg_tt_reader rdr(file);
-    for ( auto i = 0; i < rdr.length(); ++i ) {
+    for ( std::size_t i = 0; i < rdr.length(); ++i ) {
         rc = esop(rdr.get(i));
         if (rc) {
             break;
