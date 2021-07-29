@@ -13,7 +13,7 @@ ifneq ($(SANITIZE),)
 DEBUG += -fsanitize=$(SANITIZE)
 endif
 
-REVKIT ?= revkit
+REVKIT ?= $(CURDIR)/revkit
 INC := -I$(REVKIT)/lib/easy
 INC += -I$(REVKIT)/lib/kitty
 INC += -I$(REVKIT)/lib/glucose
