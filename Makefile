@@ -60,8 +60,8 @@ install: $(PROG)
 uninstall:
 	-rm -f $(PREFIX)/bin/$(PROG)
 
-check:
-	@echo nothing...
+check: $(PROG)
+	make -C test
 
 clean:
 	-rm -rf $(OBJ) $(DEP) $(PROG)

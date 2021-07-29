@@ -34,7 +34,9 @@ xtg_tt_reader::xtg_tt_reader(std::string file)
     int len = 0;
     while (std::getline(in, line)) {
         std::size_t len = line.length();
-        assert(len > 0);
+        if (len == 0 || line[0] == '#') {
+            continue;
+        }
         assert(power_of_two(len));
         kitty::dynamic_truth_table tt(ln2(len));
         kitty::create_from_binary_string(tt, line);
