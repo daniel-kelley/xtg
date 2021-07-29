@@ -3,7 +3,7 @@
 
    Copyright (c) 2021 by Daniel Kelley
 
-   Exact Toffoli Gate Generator
+   Simple Quantum gate playground.
 
 */
 
