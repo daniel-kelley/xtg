@@ -16,12 +16,12 @@ jobs:
     - name: prep
       run: |
         git clone --recurse-submodules https://github.com/daniel-kelley/xtg
-        make -C xtg
     - name: make
-      run: make -C xtg
-    - name: make check
       run: |
         ls
         ls xtg
+        make -C xtg
+    - name: make check
+      run: |
         make -C xtg clean
         make -C xtg SANITIZE=address SANLIBS=-lasan check
