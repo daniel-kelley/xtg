@@ -5,6 +5,6 @@
 #
 
 all:
-	../xtg and-2
+	../xtg -e and-2
 	../xtg mux-2-1
 

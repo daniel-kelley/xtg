@@ -43,6 +43,7 @@ DEP := $(SRC:%.cpp=%.d)
 LDFLAGS :=
 
 LDLIBS += $(SANLIBS)
+LDLIBS += -lboost_program_options
 LDLIBS += -lstdc++
 LDLIBS += -lm
 
