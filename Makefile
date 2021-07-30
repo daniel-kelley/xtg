@@ -17,9 +17,10 @@ REVKIT ?= $(CURDIR)/revkit
 INC := -I$(REVKIT)/lib/easy
 INC += -I$(REVKIT)/lib/kitty
 INC += -I$(REVKIT)/lib/glucose
-INC += -I$(REVKIT)/lib/fmt
-INC += -I$(REVKIT)/lib/lorina
-INC += -I$(REVKIT)/lib/rang
+#Needed for lorina
+#INC += -I$(REVKIT)/lib/fmt
+#INC += -I$(REVKIT)/lib/rang
+#INC += -I$(REVKIT)/lib/lorina
 
 WARN ?= -Wall
 WARN += -Wextra
@@ -31,8 +32,8 @@ WARN += -Wno-type-limits
 WARN += -Wno-error=sign-compare
 WARN += -Wno-sign-compare
 
+DEBUG += -std=c++17
 CPPFLAGS := $(INC) -MP -MMD
-CXXFLAGS := -std=c++17
 CXXFLAGS += $(WARN)
 CXXFLAGS += $(DEBUG)
 
@@ -48,7 +49,6 @@ LDFLAGS :=
 
 LDLIBS += $(SANLIBS)
 LDLIBS += -lboost_program_options
-LDLIBS += -lstdc++
 LDLIBS += -lm
 
 PROG := xtg
@@ -58,6 +58,7 @@ PROG := xtg
 all: $(PROG)
 
 $(PROG): $(OBJ)
+	$(CXX) $(DEBUG) $(LDFLAGS) $^ $(LDLIBS)
 
 install: $(PROG)
 	install -p -m 755 $(PROG) $(PREFIX)/bin
@@ -70,5 +71,8 @@ check: $(PROG)
 
 clean:
 	-rm -rf $(OBJ) $(DEP) $(PROG)
+
+%.o: %.cpp
+	$(CXX) $(DEBUG) $(CPPFLAGS) $(CXXFLAGS) -c -o $@ $<
 
 -include $(DEP)
