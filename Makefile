@@ -21,16 +21,20 @@ INC += -I$(REVKIT)/lib/fmt
 INC += -I$(REVKIT)/lib/lorina
 INC += -I$(REVKIT)/lib/rang
 
-WARN := -Wall
+WARN ?= -Wall
 WARN += -Wextra
 WARN += -Werror
 # RevKit needs the following...
 WARN += -Wno-class-memaccess
 WARN += -Wno-misleading-indentation
 WARN += -Wno-type-limits
+WARN += -Wno-error=sign-compare
+WARN += -Wno-sign-compare
 
 CPPFLAGS := $(INC) -MP -MMD
-CXXFLAGS := $(WARN) $(DEBUG)
+CXXFLAGS := -std=c++17
+CXXFLAGS += $(WARN)
+CXXFLAGS += $(DEBUG)
 
 SRC := xtg.cpp
 SRC += xtg_tt_reader.cpp
@@ -43,6 +47,7 @@ DEP := $(SRC:%.cpp=%.d)
 LDFLAGS :=
 
 LDLIBS += $(SANLIBS)
+LDLIBS += -lboost_program_options
 LDLIBS += -lstdc++
 LDLIBS += -lm
 

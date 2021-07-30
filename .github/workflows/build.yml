@@ -23,8 +23,8 @@ jobs:
     - name: find
       run: find . -type f
     - name: make
-      run: make
+      run: make -C xtg WARN=
     - name: make check
       run: |
-        make clean
-        make SANITIZE=address SANLIBS=-lasan check
+        make -C xtg clean
+        make -C xtg SANITIZE=address WARN= SANLIBS=-lasan check
