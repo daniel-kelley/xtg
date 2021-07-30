@@ -32,7 +32,7 @@ WARN += -Wno-error=sign-compare
 WARN += -Wno-sign-compare
 
 CPPFLAGS := $(INC) -MP -MMD
-CXXFLAGS := $(WARN) $(DEBUG) -std=c++17
+CXXFLAGS := -std=c++17 $(WARN) $(DEBUG)
 
 SRC := xtg.cpp
 SRC += xtg_tt_reader.cpp
