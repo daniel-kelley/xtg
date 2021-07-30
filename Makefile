@@ -30,7 +30,7 @@ WARN += -Wno-misleading-indentation
 WARN += -Wno-type-limits
 
 CPPFLAGS := $(INC) -MP -MMD
-CXXFLAGS := $(WARN) $(DEBUG)
+CXXFLAGS := $(WARN) $(DEBUG) -std=c++17
 
 SRC := xtg.cpp
 SRC += xtg_tt_reader.cpp
