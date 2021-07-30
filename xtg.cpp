@@ -17,10 +17,8 @@
 #include <easy/esop/constructors.hpp>
 #include <kitty/constructors.hpp>
 #include <kitty/print.hpp>
-#include <fmt/fmt.h>
 #include <boost/optional.hpp>
 #include <boost/program_options.hpp>
-#include "xtg_pla_reader.hpp"
 #include "xtg_tt_reader.hpp"
 
 static int esop(kitty::dynamic_truth_table tt, bool expr)
