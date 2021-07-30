@@ -25,7 +25,7 @@ jobs:
     - name: find
       run: find . -type f
     - name: make
-      run: make -C xtg WARN=
+      run: make -C xtg
     - name: make check
       run: |
         make -C xtg clean
