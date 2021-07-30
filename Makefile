@@ -21,7 +21,7 @@ INC += -I$(REVKIT)/lib/fmt
 INC += -I$(REVKIT)/lib/lorina
 INC += -I$(REVKIT)/lib/rang
 
-WARN := -Wall
+WARN ?= -Wall
 WARN += -Wextra
 WARN += -Werror
 # RevKit needs the following...
