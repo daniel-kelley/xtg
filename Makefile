@@ -45,7 +45,7 @@ SRC += xtg_tt_reader.cpp
 OBJ := $(SRC:%.cpp=%.o)
 DEP := $(SRC:%.cpp=%.d)
 
-LDFLAGS :=
+LDFLAGS := $(DEBUG)
 
 LDLIBS += $(SANLIBS)
 LDLIBS += -lboost_program_options
@@ -58,7 +58,7 @@ PROG := xtg
 all: $(PROG)
 
 $(PROG): $(OBJ)
-	$(CXX) $(DEBUG) $(LDFLAGS) $^ $(LDLIBS)
+	$(CXX) -o $@ $(LDFLAGS) $^ $(LDLIBS)
 
 install: $(PROG)
 	install -p -m 755 $(PROG) $(PREFIX)/bin
