@@ -29,6 +29,7 @@ WARN += -Wno-class-memaccess
 WARN += -Wno-misleading-indentation
 WARN += -Wno-type-limits
 WARN += -Wno-error=sign-compare
+WARN += -Wno-sign-compare
 
 CPPFLAGS := $(INC) -MP -MMD
 CXXFLAGS := $(WARN) $(DEBUG) -std=c++17
