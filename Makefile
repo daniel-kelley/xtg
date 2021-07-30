@@ -58,7 +58,7 @@ PROG := xtg
 all: $(PROG)
 
 $(PROG): $(OBJ)
-	$(CXX) $(DEBUG) $(LDFLAGS) $^ $(LDLIBS)
+	$(CXX) -o $@ $(DEBUG) $(LDFLAGS) $^ $(LDLIBS)
 
 install: $(PROG)
 	install -p -m 755 $(PROG) $(PREFIX)/bin
