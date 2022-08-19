@@ -30,7 +30,8 @@ static int esop(kitty::dynamic_truth_table tt, bool expr)
 
     easy::esop::helliwell_maxsat_statistics stats;
     easy::esop::helliwell_maxsat_params ps;
-    auto const cubes = synthesizer_t( stats, ps ).synthesize(tt);
+    auto synth = synthesizer_t(stats, ps);
+    auto const cubes = synth.synthesize(tt);
     if (expr) {
         easy::esop::print_esop_as_exprs(cubes, tt.num_vars());
     } else {
